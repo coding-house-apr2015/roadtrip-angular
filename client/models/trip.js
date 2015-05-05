@@ -8,6 +8,10 @@ angular.module('roadtrip')
     this.departure = obj.departure;
   }
 
+  Trip.show = function(tripId){
+    return $http.get(nodeUrl + '/trips/' + tripId);
+  };
+
   Trip.find = function(){
     return $http.get(nodeUrl + '/trips');
   };
