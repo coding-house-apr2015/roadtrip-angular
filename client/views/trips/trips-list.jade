@@ -1,1 +1,18 @@
 h3 TRIPS LIST
+
+.row
+  .col-xs-4
+    table.table.table-striped
+      thead
+        tr
+          th
+          th Name
+          th Depature
+          th CreatedAt
+      tbody
+        tr(ng-repeat='trip in trips')
+          td: a.btn.btn-info.btn-xs(ui-sref='trips.show({tripId: trip._id})') Show
+          td {{trip.name}}
+          td {{trip.departure | date:'yyyy-MM-dd'}}
+          td {{trip.createdAt | date:'yyyy-MM-dd'}}
+  .col-xs-8
