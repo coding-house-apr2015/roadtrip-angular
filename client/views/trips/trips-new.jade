@@ -1,0 +1,14 @@
+h3 TRIPS NEW
+
+.row
+  .col-xs-4
+    form(name='tripForm', novalidate)
+      .form-group
+        label(for='name') Name
+        input.form-control#name(type='text', name='name', ng-model='trip.name')
+      .form-group
+        label(for='departure') Departure
+        input.form-control#departure(type='date', name='departure', ng-model='trip.departure')
+      .form-group
+        button.btn.btn-default(type='submit', ng-click='create(trip)') Create Trip
+  .col-xs-8
