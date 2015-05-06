@@ -18,11 +18,13 @@ h3 {{trip.name}}
         table.table.table-striped
           thead
             tr
+              th
               th Name
               th Latitude
               th Longitude
           tbody
             tr(ng-repeat='stop in trip.stops')
+              td: button.btn.btn-danger.btn-xs(ng-click='destroy(stop)') Delete
               td {{stop.name}}
               td {{stop.lat | number:4}}
               td {{stop.lng | number:4}}

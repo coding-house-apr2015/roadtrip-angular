@@ -21,6 +21,14 @@ angular.module('roadtrip')
     return $http.post(nodeUrl + '/trips', this);
   };
 
+  Trip.prototype.destroy = function(){
+    return $http.delete(nodeUrl + '/trips/' + this._id);
+  };
+
+  Trip.prototype.destroyStop = function(stop){
+    return $http.delete(nodeUrl + '/trips/' + this._id + '/stops/' + stop._id);
+  };
+
   Trip.prototype.addStop = function(stop){
     return $http.post(nodeUrl + '/trips/' + this._id + '/stops', stop);
   };

@@ -6,13 +6,14 @@ angular.module('roadtrip')
   function Map(){
   }
 
-  Map.addMarker = function(map, lat, lng, name){
+  Map.addMarker = function(map, lat, lng, name, icon){
     var latLng = new $window.google.maps.LatLng(lat, lng);
     var marker = new $window.google.maps.Marker({
       map: map,
       position: latLng,
       title: name,
-      animation: $window.google.maps.Animation.DROP
+      animation: $window.google.maps.Animation.DROP,
+      icon: icon
     });
     return marker;
   };

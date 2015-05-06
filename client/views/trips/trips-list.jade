@@ -6,11 +6,13 @@ h3 TRIPS LIST
       thead
         tr
           th
+          th
           th Name
           th Depature
           th CreatedAt
       tbody
         tr(ng-repeat='trip in trips')
+          td: button.btn.btn-danger.btn-xs(ng-click='destroy(trip)') Delete
           td: a.btn.btn-info.btn-xs(ui-sref='trips.show({tripId: trip._id})') Show
           td {{trip.name}}
           td {{trip.departure | date:'yyyy-MM-dd'}}
