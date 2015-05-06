@@ -4,6 +4,7 @@ angular.module('roadtrip')
 .factory('Trip', function($http, nodeUrl){
 
   function Trip(obj){
+    this._id = obj._id;
     this.name = obj.name;
     this.departure = obj.departure;
   }
@@ -18,6 +19,10 @@ angular.module('roadtrip')
 
   Trip.prototype.save = function(){
     return $http.post(nodeUrl + '/trips', this);
+  };
+
+  Trip.prototype.addStop = function(stop){
+    return $http.post(nodeUrl + '/trips/' + this._id + '/stops', stop);
   };
 
   return Trip;
